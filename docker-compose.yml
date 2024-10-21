@@ -1,0 +1,10 @@
+services:
+
+  db:
+    image: mysql
+    ports: 
+      - 3306:3306
+    environment:
+      # Root user is created automatically
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: wtp
