@@ -12,12 +12,18 @@ docker-compose up
 
 Database credentials
 
-```
+```text
 Server: localhost
 Port: 3306
 Database: wtp
 User: root
 Password: password
+```
+
+Dependencies:
+
+```shell
+sudo apt-get install pkg-config default-libmysqlclient-dev
 ```
 
 <!-- MARKDOWN LINKS & IMAGES -->
