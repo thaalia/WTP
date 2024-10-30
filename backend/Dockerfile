@@ -1,6 +1,6 @@
 FROM python:3.11
 
-WORKDIR /app
+WORKDIR /home
 
 RUN apt-get update && apt-get install -y netcat-openbsd
 
@@ -10,6 +10,8 @@ COPY wait_for_db.sh /wait_for_db.sh
 RUN chmod +x /wait_for_db.sh
 
 RUN pip install --no-cache-dir -r requirements.txt
+RUN pip show django_extensions
+
 
 COPY . .
 

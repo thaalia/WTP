@@ -3,14 +3,13 @@ services:
   db:
     image: mysql
     ports: 
-      - 3306:3306
+      - "3306:3306"
     environment:
-      # Root user is created automatically
       MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: wtp
     volumes:
       - mysql_data:/var/lib/mysql
-      
+
   web:
     build: .
     command: ["/wait_for_db.sh", "python3", "manage.py", "runserver", "0.0.0.0:8000"]
@@ -20,7 +19,8 @@ services:
       - db
     env_file:
       - .env
-
+    volumes:
+      - .:/home
 
 volumes:
   mysql_data:
